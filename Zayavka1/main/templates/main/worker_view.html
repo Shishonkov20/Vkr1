@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Список сотрудников</h2>
+    {% for i in objs %}
+        <h3>Логин: {{ i.username }}</h3>
+        <p>Должность: {{ i.status }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block comments %}
+{% endblock %}

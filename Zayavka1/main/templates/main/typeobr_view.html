@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Список видов обращений</h2>
+    {% for i in objs %}
+        <h3>{{ i.name }}</h3>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block comments %}
+    <a href="{% url 'create_type_obr' %}">Добавить вид обращения</a>
+{% endblock %}

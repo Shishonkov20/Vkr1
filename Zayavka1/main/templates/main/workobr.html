@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content">
+            <div class="block">
+                <div class="search">
+                    <form class="search_form" action="{% url 'workobr' %}" method="get">
+                      <label for="q">Выбрать обращение:</label>
+                        <select id="q" name="q">
+                          {% for i in voyages %}
+                              <option value="{{ i.id }}">{{ i }}</option>
+                          {% endfor %}
+                        </select><br><br>
+                      <button type="submit">Поиск</button>
+                    </form>
+                </div>
+            </div>
+        {% for obj in objs %}
+            <p>Сотрудник: {{ obj.worker }}</p>
+            <p>Вид работы: {{ obj.type_work }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block comments %}
+    <a href="{% url 'create_obr' %}">Добавить обращение</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Список работ по обращению</h2>
+    {% for i in objs %}
+        <h3>{{ i.obr }}</h3>
+        <p>{{ i.type_work }}</p>
+        <p>{{ i.worker }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block comments %}
+    <a href="{% url 'create_workbyobr_view' %}">Добавить работу по обращению</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Список клиентов</h2>
+    {% for i in objs %}
+        <h3>ФИО:{{ i.fio }}</h3>
+        <p>Адрес: {{ i.address }}</p>
+        <p>Телефон: {{ i.phone }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block comments %}
+    <a href="{% url 'create_client' %}">Добавить клиента</a>
+{% endblock %}

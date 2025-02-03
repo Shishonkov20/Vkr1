@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Список обращений в работе</h2>
+    {% for i in objs %}
+        <p>ID: {{ i.pk }}</p>
+        <h2>Дата: {{ i.dat }}</h2>
+        <p>Клиент: {{ i.client }}</p>
+        <p>Вид обращения: {{ i.type_obr }}</p>
+        <p>Описание: {{ i.description }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block comments %}
+    <a href="{% url 'create_obr' %}">Добавить обращение</a>
+{% endblock %}
