@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+		<h1 class="greeting-text">Добро пожаловать, {{ user }}, должность {{ ddd.dolzn }}</h1>
+		<div class="project__list">
+			{% for project in projects %}
+				<div class="project__item">
+					<p class="project__title"><a href="{% url 'detail_project' pk=project.pk %}">{{ project.project.name }}</a></p>
+					<p class="project__date_start">{{ project.project.date_start }}</p>
+					<p class="project__date_end">{{ project.project.date_end }}</p>
+					<p class="project__status">{{ project.project.status }}</p>
+					<p class="project__work"><a href="{% url 'works_by_project' pk=project.pk %}">Работы по проекту</a></p>
+				</div>
+
+			{% endfor %}
+		</div>
+	{% else %}
+		<h1>Зарегистрируйтесь или войдите, чтобы посмотреть свои проекты</h1>
+	{% endif %}
+
+
+
+{% endblock %}

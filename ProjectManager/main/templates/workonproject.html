@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+	<h1 class="greeting-text">Название проекта: {{ project.name }}</h1>
+	<p class="detail_item">Дата начала: {{ project.date_start }}</p>
+	<p class="detail_item">Дата окончания: {{ project.date_end }}</p>
+	<p class="detail_item">Статус: {{ project.status }}</p>
+	<div class="project__form">
+		<form action="" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Добавить</button>
+		</form>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<h1 class="greeting-text">{{ project.name }}</h1>
+	{% for work in works %}
+		<div class="work_container">
+			<h2>Работу выполнил: {{ work.worker }}</h2>
+			<p>Описание работы: {{ work.description }}</p>
+			<p>Тип работы: {{ work.type_work }}</p>
+			<p>Дата выполнения: {{ work.dat }}</p>
+			<hr>
+		</div>
+	{% endfor %}
+
+{% endblock %}

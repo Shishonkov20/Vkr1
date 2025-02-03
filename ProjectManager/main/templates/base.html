@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Управление проектами</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+	<div id="app">
+		<header>
+			<h1 class="my-header-title"><a href="{% url 'main_page' %}">"Управление проектами"</a></h1>
+			<p class="reg-link"><a href="{% url 'register' %}">Регистрация</a></p>
+			<p class="reg-link"><a href="{% url 'login' %}">Вход</a></p>
+			<p class="reg-link"><a href="{% url 'logout' %}">Выход</a></p>
+		</header>
+		<main id="main">
+			{% block content %}
+			{% endblock %}
+		</main>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h2>Вход</h2>
+    {% if user.is_authenticated %}
+        <p>Вы уже выполнили вход</p>
+    {% else %}
+        <div class="login">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Вход</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
