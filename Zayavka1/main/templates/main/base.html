@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- XDSoft DateTimePicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+    <title>Заявки</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="grid">
+                <div class="grid_body">
+
+                    <div class="grid-head">
+                        <h1><a href="{% url 'main' %}">Заявки</a></h1>
+                        <div align="right">
+                            <a href="{% url 'register' %}">Регистрация</a>
+                            <a href="{% url 'login' %}">Вход</a>
+                            {% if user.is_authenticated %}
+                            {% endif %}
+                            <a href="{% url 'logout' %}">Выход</a>
+                        </div>
+                    </div>
+
+                    <div class="grid-categories">
+                        {% block left %}
+                            {% if user.status == 'Руководитель' %}
+                                <p><a href="{% url 'type_obr' %}">Список видов обращений</a></p>
+                                <p><a href="{% url 'client' %}">Список клиентов</a></p>
+                                <p><a href="{% url 'type_work' %}">Список видов работ</a></p>
+                                <p><a href="{% url 'obr' %}">Список обращений</a></p>
+                                <p><a href="{% url 'workbyobr_view' %}">Список работ по обращению</a></p>
+                                <p><a href="{% url 'worker' %}">Список сотрудников</a></p>
+                                <p><a href="{% url 'workinobr' %}">Список заявок в работе</a></p>
+                                <p><a href="{% url 'workobr' %}">Выборка работ по обращению</a></p>
+                            {% endif %}
+                            {% if user.status == 'Сотрудник' %}
+                                <p><a href="{% url 'workbyobr_view' %}">Список работ по обращению</a></p>
+                            {% endif %}
+                        {% endblock %}
+                    </div>
+
+                    <div class="grid-content">
+                        {% block content %}
+						{% endblock %}
+                    </div>
+
+
+                    <div class="grid_view_comment">
+                        {% block comments %}
+
+                        {% endblock %}
+                    </div>
+
+                    <div class="grid_add_comment">
+                        {% block created_comments %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>
