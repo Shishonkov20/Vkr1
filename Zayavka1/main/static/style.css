@@ -1,0 +1,54 @@
+body{
+    background-color: white;
+}
+
+a {
+    color: #7a6464; /* Цвет обычной ссылки */
+   }
+h5 {
+    font-size: 20px;
+}
+
+.grid_body{
+    padding: 20px 10% 0px 10%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+    "head head head"
+    "categories content content"
+    "create_comment view_comment view_comment";
+}
+
+.grid-head{
+    grid-area: head;
+    text-align: center;
+    border: 2px dashed rgba(55, 55, 255, 0.2);
+    padding: 47px;
+}
+
+.grid-categories{
+    grid-area: categories;
+    text-align: left;
+    border: 2px dashed rgba(55, 55, 255, 0.2);
+    padding: 30px;
+}
+
+.grid-content{
+    grid-area: content;
+    border: 2px dashed rgba(55, 55, 255, 0.2);
+    padding: 30px;
+}
+
+.grid_view_comment{
+    grid-area: view_comment;
+    text-align: left;
+    border: 2px dashed rgba(55, 55, 255, 0.2);
+    padding: 30px;
+}
+
+.grid_add_comment{
+    grid-area: create_comment;
+    text-align: center;
+    border: 2px dashed rgba(55, 55, 255, 0.2);
+    padding: 30px;
+}
