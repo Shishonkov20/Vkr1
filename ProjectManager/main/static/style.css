@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    background: aqua;
+    justify-self: center;
+    align-items: center;
+}
+
+.my-header-title {
+    padding: 10px;
+    margin: auto;
+}
+
+.my-header-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.my-header-title a:hover {
+    color: #d90c0c;
+}
+
+.greeting-text {
+    margin-top: 20px;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.reg-link {
+    padding-right: 20px;
+}
+
+.reg-link a {
+    text-decoration: none;
+}
+
+p{
+    margin-top: 5px;
+}
+
+.detail_item{
+    font-size: 20px;
+}
+
+.regForm {
+    display: flex;
+    flex-direction: row;
+}
+
+.project__list {
+    margin-top: 20px;
+}
+
+.project__item {
+    display: inline-flex;
+    justify-content: inherit;
+    align-items: inherit;
+    width: 100%;
+    border-bottom: #d90c0c 2px solid;
+    margin-bottom: 7px;
+}
+
+.project__title{
+    width: 500px;
+}
+
+.project__date_start, .project__date_end, .project__status {
+    margin-right: auto;
+}
+
+.project__title, .project__date_start, .project__date_end, .project__status, .project__work {
+    font-size: 20px;
+}
+
+.project__item:hover{
+    border-bottom: #81ef0d 4px solid;
+}
+
+.project__form{
+    margin-top: 20px;
+}
+
+.work_container{
+    margin-bottom: 5px;
+}
+
